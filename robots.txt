@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /sitemap.xml
+Disallow: /admin/login.php
+
+
+
+Sitemap: https://www.uidesignz.com/sitemap.xml

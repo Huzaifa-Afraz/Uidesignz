@@ -1,0 +1,68 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
+
+RewriteCond %{THE_REQUEST} ^.*/index\.php 
+RewriteRule ^(.*)index.php$ /$1 [R=301,L] 
+
+# ensure www.
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://uidesignz.com/$1 [R,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^portfolios/([0-9a-zA-Z-]+)/?$ detail-portfolio.php?portfolio_slug=$1 [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^portfolio_category/([0-9a-zA-Z-]+)/?$ portfolio-categories.php?portfolio_categories_slug=$1 [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^blogs/([0-9a-zA-Z-]+)/?$ read-blog.php?blog_slug=$1 [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^blog_category/([0-9a-zA-Z-]+)/?$ blog-categories.php?blog_categories_slug=$1 [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^tag/([0-9a-zA-Z-]+)/?$ tag-blogs.php?tag=$1 [NC,L]
+
+errordocument 404 https://www.uidesignz.com/error-404.php
+Redirect 301 /portfolio.html    https://www.uidesignz.com/portfolio
+Redirect 301 /frontend-dev-service.html    https://www.uidesignz.com/frontend-dev-service
+Redirect 301 /landingpage-portfolio.html   https://www.uidesignz.com/portfolios/clear-health-landing-page-design
+Redirect 301 /mobile-app-design-service.html   https://www.uidesignz.com/mobile-app-design-service
+Redirect 301 /design-system.html   https://www.uidesignz.com/design-system
+Redirect 301 /2022/01/19/5-guidelines-for-creating-a-better-user-experience-for-children/   https://www.uidesignz.com
+Redirect 301 /blog-masonry-sidebar/page/2/   https://www.uidesignz.com
+Redirect 301 /author/designermubeen85/   https://www.uidesignz.com
+Redirect 301 /portfolio/wavechat/   https://www.uidesignz.com/portfolio
+Redirect 301 /portfolio/handprinter/feed/   https://www.uidesignz.com/portfolio
+Redirect 301 /blog-masonry-sidebar/   https://www.uidesignz.com/blog
+Redirect 301 /features   https://www.uidesignz.com/services
+Redirect 301 /about-us-monochrome/   https://www.uidesignz.com/about-us
+Redirect 301 /index.html   https://www.uidesignz.com
+Redirect 301 /contact/   https://www.uidesignz.com/contact-us
+Redirect 301 /pricing/   https://www.uidesignz.com/contact-us
+Redirect 301 /tag/responsive/   https://www.uidesignz.com
+Redirect 301 /blog_category/graphic-designing   https://www.uidesignz.com/blog_category/uxui-design
+Redirect 301 /blogs/role-of-uxui-design-principle-in-website-and-mobile-app   https://www.uidesignz.com/blogs/understanding-the-role-of-ui-design-in-mobile-app-development
+Redirect 301 /tag/we   https://www.uidesignz.com
+Redirect 301 /?s={search_term_string}   https://www.uidesignz.com
+Redirect 301 /read-blog.html   https://www.uidesignz.com/blog
+Redirect 301 /careers/   https://www.uidesignz.com/about-us
+Redirect 301 /portfolio/fin-do/   https://www.uidesignz.com/portfolio
+Redirect 301 /tag/mobile-app-development-services   https://www.uidesignz.com/mobile-app-design-service
+Redirect 301 /2022/01/19/what-exactly-is-mobile-learning/   https://www.uidesignz.com
+Redirect 301 /2022/01/19/ui-ux-design-principles/   https://www.uidesignz.com
+Redirect 301 /comments/feed/   https://www.uidesignz.com
+Redirect 301 /portfolio/the-dreamer/   https://www.uidesignz.com/portfolio
+Redirect 301 /support-help-faq/   https://www.uidesignz.com/contact-us
+Redirect 301 /tag/blog   https://www.uidesignz.com/blog
+Redirect 301 /tag/mobile-app-services   https://www.uidesignz.com/mobile-app-design-service
+Redirect 301 /tag/hre   https://www.uidesignz.com
+Redirect 301 /tag/mobile-app-development-company   https://www.uidesignz.com/frontend-dev-service
+Redirect 301 /gallery/  https://www.uidesignz.com/portfolio
+
+
